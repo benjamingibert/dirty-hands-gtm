@@ -123,7 +123,7 @@ dirty-hands-gtm/
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/bengibert/dirty-hands-gtm.git
+   git clone https://github.com/benjamingibert/dirty-hands-gtm.git
    cd dirty-hands-gtm
    ```
 
