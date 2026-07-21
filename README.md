@@ -78,7 +78,8 @@ dirty-hands-gtm/
 │   ├── examples/
 │   │   ├── sample-transcript.md         # Fictional sales call transcript
 │   │   ├── sample-insights.json         # Call analyzer output (structured)
-│   │   └── sample-brief.json            # Research agent output (content brief)
+│   │   ├── sample-brief.json            # Research agent output (content brief)
+│   │   └── sample-angles.json           # Thought leadership angle output
 │   └── transcripts/                     # Drop your own transcripts here
 │
 ├── proof-library/
@@ -98,7 +99,9 @@ dirty-hands-gtm/
 │   │   │   └── SKILL.md
 │   │   ├── seo-pipeline/                # 6-stage content pipeline with review gate
 │   │   │   └── SKILL.md
-│   │   └── linkedin-insights/           # LinkedIn post insights from calls
+│   │   ├── linkedin-insights/           # LinkedIn post insights from calls
+│   │   │   └── SKILL.md
+│   │   └── thought-leadership-angles/   # Contrarian patterns across calls
 │   │       └── SKILL.md
 │   │
 │   └── rules/
@@ -106,6 +109,7 @@ dirty-hands-gtm/
 │
 ├── outputs/                             # Pipeline outputs land here
 │   ├── articles/
+│   ├── angles/                          # Created on first thought-leadership run
 │   ├── seo-assets/
 │   ├── linkedin/
 │   └── briefs/
@@ -141,9 +145,11 @@ dirty-hands-gtm/
 
 5. Run `/extract-insights` to analyze transcripts into structured intelligence (JTBD, pains, workflows, competitor mentions, customer lexicon).
 
-6. Run `/research-brief` to generate a prioritized topic backlog and detailed content briefs from your intelligence.
+6. Run `/thought-leadership-angles --min-calls 5` to surface contrarian patterns across calls for founder content, newsletter angles, and long-form thought leadership.
 
-7. Run `/seo-pipeline` to execute the full content pipeline: enrichment, outline (with human review gate), writing, editing, internal linking, and publishing.
+7. Run `/research-brief` to generate a prioritized topic backlog and detailed content briefs from your intelligence.
+
+8. Run `/seo-pipeline` to execute the full content pipeline: enrichment, outline (with human review gate), writing, editing, internal linking, and publishing.
 
 ---
 
@@ -164,6 +170,7 @@ Each skill loads only the context files it needs. This table shows exactly what 
 | `seo-pipeline` (linker) | Sitemap / URL inventory | Link placement only |
 | `seo-pipeline` (publisher) | SEO assets YAML | Metadata for CMS creation |
 | `linkedin-insights` | `personas.md`, `positioning.md` | Persona-specific framing, positioning themes |
+| `thought-leadership-angles` | `personas.md`, `positioning.md`, `customer-intelligence/insights/` | Cross-call pattern extraction, buyer-perspective mapping, contrarian content angles |
 
 ---
 
@@ -186,7 +193,7 @@ Skills detect MCP availability at runtime. If a server is not connected, the ski
 
 ## Future Motions
 
-The `motions/` directory is where new GTM workflows land as the newsletter covers them. Planned:
+The `motions/` directory is where new GTM workflows land as the newsletter covers them. It now includes the Issue 2 fan-out branch from `/extract-insights` into `/thought-leadership-angles`, plus the reference patterns that make the motion architecture reusable. Planned:
 
 - **Signal-based outbound** -- trigger-aware sequences from intent signals, job changes, and funding events
 - **Content repurposing** -- newsletter to social atomization, long-form to short-form extraction

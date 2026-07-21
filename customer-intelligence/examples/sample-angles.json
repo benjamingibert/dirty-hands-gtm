@@ -1,0 +1,113 @@
+{
+  "generated_date": "2026-05-20",
+  "min_calls": 5,
+  "source_files": [
+    "meridiancare_2026-03-18_insights.json",
+    "northstar-logistics_2026-03-24_insights.json",
+    "harborview-financial_2026-03-29_insights.json",
+    "brightline-insurance_2026-04-03_insights.json",
+    "summit-aerospace_2026-04-11_insights.json"
+  ],
+  "filter_applied": null,
+  "angles": [
+    {
+      "pattern": "impossible_tradeoff",
+      "title": "The Security Triage Nobody Admits To",
+      "tension": {
+        "accepted_narrative": "Companies invest in protecting all of their people and assets equally.",
+        "ground_truth": "Budget and staffing reality force security leaders to triage coverage long before they admit it publicly."
+      },
+      "evidence_calls": 5,
+      "supporting_quotes": [
+        {
+          "quote": "We have eighty thousand employees. Realistically, we have budget to monitor maybe fifty of them properly.",
+          "speaker_role": "Director of Crisis Management",
+          "source_file": "summit-aerospace_2026-04-11_insights.json"
+        },
+        {
+          "quote": "Adding another analyst just means more people doing the same manual screening.",
+          "speaker_role": "VP of Global Security",
+          "source_file": "brightline-insurance_2026-04-03_insights.json"
+        }
+      ],
+      "scores": {
+        "novelty": 9,
+        "tension": 9,
+        "evidence_strength": 8,
+        "persona_fit": 9,
+        "content_usefulness": 9,
+        "weighted_total": 8.8
+      },
+      "primary_persona": "global_security_director",
+      "positioning_theme": "coverage_gap",
+      "suggested_formats": [
+        "linkedin_post",
+        "newsletter_section",
+        "long_form_article"
+      ],
+      "hook_suggestion": "Your company says it protects its people. The budget says it protects fifty of them."
+    },
+    {
+      "pattern": "conventional_wisdom_violation",
+      "title": "More Headcount Does Not Fix a Broken Workflow",
+      "tension": {
+        "accepted_narrative": "When compliance workload rises, the answer is to hire another analyst.",
+        "ground_truth": "Buyers keep describing process design failures that extra headcount only makes more expensive."
+      },
+      "evidence_calls": 5,
+      "supporting_quotes": [
+        {
+          "quote": "We just have more hands doing the same manual work.",
+          "speaker_role": "VP of Compliance",
+          "source_file": "meridiancare_2026-03-18_insights.json"
+        }
+      ],
+      "scores": {
+        "novelty": 8,
+        "tension": 8,
+        "evidence_strength": 8,
+        "persona_fit": 8,
+        "content_usefulness": 8,
+        "weighted_total": 8
+      },
+      "primary_persona": "vp_of_compliance",
+      "positioning_theme": "workflow_design_over_headcount",
+      "suggested_formats": [
+        "linkedin_post",
+        "newsletter_section"
+      ],
+      "hook_suggestion": "If hiring one more analyst does not reduce the chaos, you do not have a staffing problem."
+    },
+    {
+      "pattern": "deviant_language",
+      "title": "Customers Keep Calling It Audit Prep Mode",
+      "tension": {
+        "accepted_narrative": "The category talks about continuous compliance maturity and unified visibility.",
+        "ground_truth": "Buyers describe their lives with operational survival language that reveals how episodic and brittle the work still is."
+      },
+      "evidence_calls": 5,
+      "supporting_quotes": [
+        {
+          "quote": "My team has two modes: audit prep mode and catching up on everything we ignored during audit prep mode.",
+          "speaker_role": "VP of Compliance",
+          "source_file": "meridiancare_2026-03-18_insights.json"
+        }
+      ],
+      "scores": {
+        "novelty": 7,
+        "tension": 7,
+        "evidence_strength": 8,
+        "persona_fit": 8,
+        "content_usefulness": 8,
+        "weighted_total": 7.45
+      },
+      "primary_persona": "grc_leader",
+      "positioning_theme": "customer_language_over_category_language",
+      "suggested_formats": [
+        "linkedin_post",
+        "newsletter_section"
+      ],
+      "hook_suggestion": "The phrase buyers keep using is not continuous compliance. It is audit prep mode."
+    }
+  ]
+}

@@ -48,8 +48,13 @@ The real value compounds. Systematic analysis across all calls surfaces patterns
 
 These patterns flow upstream to refine your ICP definition, sharpen persona profiles, and calibrate positioning in the strategy layer.
 
+They also flow sideways into downstream skills:
+- `/linkedin-insights` turns single-call intelligence into post drafts
+- `/thought-leadership-angles --min-calls 5` turns accumulated insight files into contrarian cross-call patterns for founder content and newsletter writing
+
 ## Reference
 
 - **`examples/`** — Sample extraction output showing the expected structure and level of detail.
+- **`examples/sample-angles.json`** — Reference shape for cross-call angle output.
 - **`transcripts/`** — Drop your raw transcripts here.
 - **`insights/`** — Structured extractions accumulate here over time.

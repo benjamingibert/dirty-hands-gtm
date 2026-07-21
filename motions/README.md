@@ -22,6 +22,39 @@ Inputs → Processing Stages → Quality Gates → Outputs
 ### Content Pipeline (SEO Articles from Sales Calls)
 The first fully built motion. Takes sales call transcripts through customer intelligence extraction, topic clustering, keyword research, article drafting, proof enrichment, and SEO optimization — producing publish-ready long-form content grounded in real customer language.
 
+### Issue 2 Fan-Out Branch (Thought Leadership Angles)
+Issue 2 of Dirty Hands, "Skills, Chains, and Compound Interest," adds a fan-out branch from `/extract-insights` into `/thought-leadership-angles`. The point is not another prompt. It is a reusable pattern: one expensive extraction step creates structured intelligence that multiple downstream skills can reuse at marginal cost.
+
+## Issue Map
+
+| Issue | Repo artifact | What shipped |
+|---|---|---|
+| Issue 1 | Content pipeline baseline | Core repo structure and first motion |
+| Issue 2 | `/thought-leadership-angles` | Cross-call thought leadership extraction, sample angle output, and the seven transfer patterns reference |
+
+## Seven Architectural Patterns
+
+These are the transferable patterns documented in Issue 2 and embodied in the repo:
+
+1. **Filename-based state machines** — pipeline progress encoded in filenames rather than external state.
+2. **Human review gates** — explicit pause points at strategic inflection points.
+3. **Scored outputs for downstream routing** — outputs include scores, not just content.
+4. **Tiered evidence mining** — sources searched in priority order, stopping when enough proof is found.
+5. **Approval queues** — draft states before anything reaches the outside world.
+6. **Skill self-modification** — retrospectives feed general learnings back into the system.
+7. **MCP tool selection guides** — explicit task-to-tool mappings reduce ambiguity as integrations grow.
+
+## Fan-Out Pattern
+
+```text
+/extract-insights
+  -> /research-brief
+  -> /linkedin-insights
+  -> /thought-leadership-angles
+```
+
+One structured extraction can support multiple downstream motions without re-processing raw transcripts. That is the compounding behavior Issue 2 is describing.
+
 ## Planned Motions
 
 Each future Dirty Hands newsletter issue will introduce a new motion:

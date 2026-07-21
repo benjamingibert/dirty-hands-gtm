@@ -49,6 +49,7 @@ If the knowledgebase and all derived files exist, tell the user:
 Then list the available skills (see below) and suggest a starting point:
 
 - If `customer-intelligence/transcripts/` contains files: suggest running `/extract-insights`
+- If `customer-intelligence/insights/` contains multiple files: suggest running `/thought-leadership-angles --min-calls 5`
 - If transcripts are empty but strategy exists: suggest dropping transcripts into `customer-intelligence/transcripts/` or running `/research-brief` to start from strategy alone
 - If insights and briefs already exist in `outputs/briefs/`: suggest running `/seo-pipeline`
 
@@ -102,6 +103,12 @@ Extract LinkedIn post angles from customer intelligence. Maps insights to person
 **Context consumed:** `strategy/personas.md`, `strategy/positioning.md`
 **When to use:** When you want to turn customer intelligence into LinkedIn content angles.
 
+### /thought-leadership-angles
+Extract contrarian, pattern-based thought leadership angles across multiple call extractions. Finds the tensions, tradeoffs, and deviant language that make strong founder content and newsletter sections.
+
+**Context consumed:** `strategy/personas.md`, `strategy/positioning.md`, `customer-intelligence/insights/*.json`
+**When to use:** After you have accumulated multiple insight files and want cross-call patterns rather than single-call takeaways. Use `--min-calls 5` to avoid anecdotal angles.
+
 ---
 
 ## Context Architecture
@@ -125,6 +132,7 @@ extract-insights reads:  icp + personas + competitive
 research-brief reads:    icp + personas + competitive + customer-intelligence/
 seo-pipeline reads:      varies by stage (see table above)
 linkedin-insights reads: personas + positioning
+thought-leadership-angles reads: personas + positioning + insights/
 ```
 
 ### The cascade principle
@@ -162,6 +170,7 @@ Skills detect MCP availability at runtime. If a server is not connected, the ski
 - Outlines: `outputs/briefs/{topic-slug}-outline.md`
 - Approved outlines: `outputs/briefs/{topic-slug}-outline-approved.md`
 - Articles: `outputs/articles/{topic-slug}.md`
+- Thought leadership angles: `outputs/angles/{date}-angles.json`
 - SEO assets: `outputs/seo-assets/{topic-slug}-seo.yaml`
 - LinkedIn posts: `outputs/linkedin/{topic-slug}-linkedin.md`
 
@@ -173,6 +182,7 @@ Skills detect MCP availability at runtime. If a server is not connected, the ski
 - `customer-intelligence/examples/` -- sample transcript and outputs (read-only)
 - `proof-library/case-studies/` -- your case studies with quantifiable metrics
 - `outputs/` -- all pipeline outputs land here, organized by type
+- `outputs/angles/` -- cross-call thought leadership angle sets written by `/thought-leadership-angles`
 - `motions/` -- future GTM motions added with each newsletter issue
 
 ### The human review gate
